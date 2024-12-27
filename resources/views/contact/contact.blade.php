@@ -21,6 +21,11 @@
             font-weight: bold;
         }
     </style>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
@@ -80,7 +85,7 @@
 
     <div class="container">
         <div class="contact-header">
-            <h1>Contact Us</h1>
+            <h1>{{__('lang.about_us')}}</h1>
             <p>Agar sizda biron bir savol bo'lsa, quyidagi shakl yoki taqdim etilgan aloqa ma'lumotlari orqali biz bilan bog'laning.</p>
         </div>
 
@@ -88,10 +93,10 @@
             <!-- Contact Information -->
             <div class="col-md-6 contact-info">
                 <h5>{{__('lang.address')}}</h5>
-                <p>123 Main Street,<br> Tashkent, Uzbekistan</p>
+                <p> Toshkent shahar, Mirobod tumani,<br> T.Shevchenko ko'chasi 1</p>
 
                 <h5>Phone</h5>
-                <p>+998 (90) 123-45-67</p>
+                <p>+998 (71) 207-40-80</p>
 
                 <h5>Email</h5>
                 <p> info@acdf.uz</p>
@@ -99,7 +104,36 @@
 
             <!-- Contact Form -->
             <div class="col-md-6">
-                <form action="" method="POST">
+               
+                <div class="container mt-5">
+                    <h1 class="text-center mb-4">Contact Form</h1>
+            
+                    <!-- Contact Form -->
+                    <div class="col-md-6 mx-auto">
+                        <form action="{{ route('contact.submit') }}" method="POST">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                            </div>
+            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+            
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Your Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Write your message here" required></textarea>
+                            </div>
+            
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            
+               
+                {{-- <form action="" method="POST">
                     @csrf
                     <div class="mb-3">
                         <label for="name" class="form-label">Full Name</label>
@@ -117,13 +151,41 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+                </form> --}}
+
+
+
             </div>
+
+
         </div>
     </div>
 
+    <!-- SweetAlert Messages -->
+    @if(session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: '{{ session('success') }}',
+        });
+    </script>
+    @endif
+
+    @if(session('error'))
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: '{{ session('error') }}',
+        });
+    </script>
+    @endif
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> --}}
+
 
 
 </body>

@@ -124,7 +124,7 @@
             <svg class="bi" width="24" height="24">
                 <use xlink:href="#aperture"/>
             </svg>
-            Aperture
+            Chatbot
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
                 aria-controls="offcanvas" aria-label="Toggle navigation">
@@ -248,7 +248,7 @@
     </div>
 </main>
 
-<footer class="container py-5">
+{{-- <footer class="container py-5   ">
     <div class="row">
         <div class="col-12 col-md">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
@@ -263,8 +263,57 @@
 
 
     </div>
-</footer>
-<script src="{{ asset('assets/bootstrap5/dist/js/bootstrap.bundle.min.js') }}"></script>
+</footer> --}}
+
+<footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-map">
+          
+          
+         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d891.042601308334!2d69.27480644501541!3d41.30672908371527!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b27e34d18d1%3A0x9dd1d275534b455c!2z0KTQvtC90LQg0YDQsNC30LLQuNGC0LjRjyDQutGD0LvRjNGC0YPRgNGLINC4INC40YHQutGD0YHRgdGC0LLQsCDQv9GA0Lgg0JrQsNCx0LjQvdC10YLQtSDQnNC40L3QuNGB0YLRgNC-0LIg0KDQtdGB0L_Rg9Cx0LvQuNC60Lgg0KPQt9Cx0LXQutC40YHRgtCw0L0!5e0!3m2!1sru!2s!4v1735293726152!5m2!1sru!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        
+         <div class="footer-contacts">
+          <div class="footer-contacts-top">
+            <div>
+              <div class="__title">Kontaktlar</div>
+              <!-- +998 95 <span>340 41 07</span> -->
+              <!-- <br> -->
+              +998 71 <span>207 40 80</span>            <br>
+              +998 71 <span>207 40 80</span>          </div>
+            <div class="footer_right">
+              <div class="footer-nets">
+                <!-- <a href="">
+                  <img src="/images/icons/vk.png" alt="">
+                </a> -->
+                
+                <a href="https://t.me/shox_8899">
+                    {{-- <i class="fa-brands fa-telegram"></i> --}}
+                  <img  width="50" height="45" src="{{ asset('assets/images/tg.png')}}" alt="">
+                </a>
+               
+              </div>
+            </div>
+          </div>
+          <div class="footer-contacts-bottom">
+          
+       
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="copyright">
+          All Content © 2024 ACDF info@acdf.uz <br> 
+        </div>
+       
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="{{ asset('assets/bootstrap5/dist/js/bootstrap.bundle.min.js') }}"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
 <script>
